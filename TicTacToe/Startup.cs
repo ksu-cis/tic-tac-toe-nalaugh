@@ -37,7 +37,7 @@ namespace TicTacToe
             else
             {
                 app.UseExceptionHandler("/Error");
-                app.UseHsts();
+                app.UseHsts();//transport security 
             }
 
             app.UseHttpsRedirection();
