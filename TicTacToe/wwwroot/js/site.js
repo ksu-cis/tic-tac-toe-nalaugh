@@ -28,20 +28,27 @@ function checkForwin() {
         }
     }
     //ceck vertical
-    for (var i = 0; i < 9; i += 3) {
+    for (var i = 0; i < 9; i += 1) {
         if (cells[0 + i].innerText && cells[3 + i].innerText === cells[6 + i].innerText) {
             setWinner(cells[i].innerText);
             return true;
         }
     }
-    //check diagenal
+    /*//check diagenal
     for (var i = 0; i < 9; i += 3) {
         if (cells[0 + i].innerText && cells[4 + i].innerText === cells[8 + i].innerText) {
             setWinner(cells[i].innerText);
             return true;
         }
     }
-
+    */
+    var form = document.getElementsByClassName("board");
+    var cells = document.getElementsByClassName("cell");
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].addEventListener(event => {
+            
+        });
+    }
 }
 
 
