@@ -16,11 +16,13 @@ namespace TicTacToe.Pages
         {
             Game = new Game();
         }
-        public void OnPost()
+        public void OnPost(int checkersX, int checkery, int spX, int sqY)
         {
            var form =  Request.Form;
             Game = new Game();
-            Game.board
+            Checkers checkers = Game.board[checkersX, checkery];
+            Game.board[spX, sqY] = checkers;
+            Game.board[checkersX, checkery] = null;
         }
     }
 }

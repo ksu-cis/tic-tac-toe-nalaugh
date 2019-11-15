@@ -9,7 +9,7 @@ namespace TicTacToe.NewFolder
     {
         public color Turn { get; set; }
         public bool King = false;
-        private color black;
+
 
         public Checkers(color black)
         {

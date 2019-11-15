@@ -13,7 +13,7 @@ namespace TicTacToe.NewFolder
             for (int i = 0; i < 8; i += 2)
             {
                 board[i, 0] = new Checkers(color.Black);
-                board[i+1, 0] = new Checkers(color.Black);
+                board[i+1, 1] = new Checkers(color.Black);
                 board[i, 2] = new Checkers(color.Black);
 
                 board[i, 7] = new Checkers(color.Red);
@@ -21,5 +21,23 @@ namespace TicTacToe.NewFolder
                 board[i, 5] = new Checkers(color.Red);
             }
     }
+        public string Serialize()
+        {
+            string state = Turn.ToString()+"\n";
+            for(int y = 0; y < 8; y++)
+            {
+                for(int x= 0; x<8; x++)
+                {
+                    if(board[x,y] != null)
+                    {
+                        Checkers c = board[x, y];
+                        state += $"{c.Turn}, {c.King}, {x}, {y} \n";
+                    }
+                }
+            }
+
+            return state;
+
+        }
     }
 }
