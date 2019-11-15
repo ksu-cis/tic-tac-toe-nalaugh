@@ -51,6 +51,12 @@ function checkForwin() {
     }
 }
 
+var squares = document.getElementsByClassName("square");
+for (var i = 0; i < squares.item; i++) {
+    squares[i].addEventListener("dragenter", OnDragEnter);
+    squares[i].addEventListener("dragdrop", onDrop);
+    squares[i].addEventListener("dragLeave", onDragLeave);
+}
 
 
 function onCLick(event) {
@@ -66,4 +72,26 @@ function onCLick(event) {
         if(!checkForwin()) setTurn();
     }
 
+} function OnDragEnter(event) {
+    if (event.target.children.length > 0) return;
+    if (event.target.classList.contains("checker")) return;
+    if (event.target.classList.contains("red")) return;
+    event.preventDefault();
+    event.target.style.backgroundColor = "yellow";
+
+}
+function onDrop(event) {
+    console.log(event);
+}
+function onDragLeave(event) {
+    event.target.style.backgroundColor = null;
+}
+function ondragStart(event) {
+
+    draggging = {
+        x: event.target;
+    }
+}
+function OnEnd(event) {
+    console.log(draggging);
 }
